@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Page Layout</title>
+</head>
+<body>
+
+<!-- Header fragment -->
+<header th:fragment="header">
+    <div class="row">
+        <div class="twelve columns">
+            <div class="jumbotron" style="text-align:center">
+                <h1><a th:href="${'/'}">Dark Side of the Rainbow</a></h1>
+                <p>memes included</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">memes</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <h3 th:if="${#httpServletRequest.remoteUser}" th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]] </h3>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a th:href="${'/'}">Home <span class="sr-only">(current)</span></a></li>
+                        <li ><a th:href="${'/about'}">About</a></li>
+                        <li><a th:href="${'/contact'}">Contact</a></li>
+                        <li><a th:href="${'/careers'}">Careers</a></li>
+                        <li><a th:href="${'/search'}">Search</a></li> <!-- IDK -->
+                        <li><a th:href="${'/lessons'}">Lessons</a></li>
+                        <li><a target="_blank" th:href="${'/console'}">H2 Database</a></li>
+                        <li th:unless="${#httpServletRequest.remoteUser}"><a th:href="${'/login'}">Log In</a></li>
+                        <li th:if="${#httpServletRequest.remoteUser}"><a th:href="${'/admin/albums/view'}">View</a></li>
+                        <li th:if="${#httpServletRequest.remoteUser}"><a th:href="${'/admin/albums/add'}">Add Album</a></li>
+                        <li th:if="${#httpServletRequest.remoteUser}"><a th:href="${'/admin/artists/view'}">View Artists</a></li>
+                        <li th:if="${#httpServletRequest.remoteUser}"><a th:href="${'/admin/artists/add'}">Add Artists</a></li>
+                        <li th:if="${#httpServletRequest.remoteUser}"><a th:href="${'/logout'}">Log Out</a></li>
+
+                        <form class="navbar-form navbar-left" method="post" th:action="@{'/search'}">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search" id="title" name="title"/>
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</header>
+
+
+<!-- Footer fragment -->
+<footer th:fragment="footer">
+    <div class="row">
+        <div class="twelve columns">
+            &copy; 2017 - Dark Side of the Rainbow
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

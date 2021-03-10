@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8"/>
+    <title>wanna log ya ?</title>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" th:href="@{'/css/normalize.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/skeleton.css'}"/>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" th:href="@{'/images/favicon.png'}"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/main.css'}"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<header th:include="layout :: header"></header>
+
+<h2>Login Page</h2>
+<div class="container">
+    <form th:action="@{'/login'}" method="post">
+        <div class="row" th:if="${param.error}">
+            <div class="twelve columns">
+                <span style="color: red;">Invalid user or password</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <label>User Name: </label>
+            </div>
+            <div class="eight columns">
+                <input name="username" id="username"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns">
+                <label>Password: </label>
+            </div>
+            <div class="eight columns">
+                <input name="userpass" id="userpass" type="password"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="twelve columns">
+                <button class="btn btn-default" type="submit">Log In</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<footer th:include="layout :: footer"></footer>
+
+</body>
+</html>

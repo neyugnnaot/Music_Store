@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8"/>
+    <title>We want pplz to join</title>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" th:href="@{'/css/normalize.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/skeleton.css'}"/>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" th:href="@{'/images/favicon.png'}"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/main.css'}"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header th:include="layout :: header"></header>
+
+
+<h2>we gots the jobs</h2>
+
+<p style="margin-left: 50px">
+    <img src="/images/job.jpg"/> <br/>
+    dream 4 you no?
+</p>
+
+<div style="margin-left: 50px">
+
+    <!-- A form that doesn't do anything because why not? -->
+    <form>
+        <label>Name</label><br/>
+        <input type="text"/><br/><br/>
+        <label>E-mail</label><br/>
+        <input type="text"/><br/><br/>
+        <label>Phone</label><br/>
+        <input type="text"/><br/><br/>
+        <input type="radio"/>  I am criminal  <input type="radio"/>  I not criminal<br/><br/>
+        <label>Tell About Yourself</label><br/>
+        <textarea rows="15" cols="60"></textarea><br/><br/>
+        <button class="btn btn-default" type="submit">Submit</button><br/>
+    </form>
+</div>
+
+<footer th:include="layout :: footer"></footer>
+
+</body>
+</html>

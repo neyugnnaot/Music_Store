@@ -1,0 +1,98 @@
+        <!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8"/>
+    <title>you chaning stuff ?</title>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" th:href="@{'/css/normalize.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/skeleton.css'}"/>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" th:href="@{'/images/favicon.png'}"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/main.css'}"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header th:include="layout :: header"></header>
+
+<h2>Edit Album</h2>
+
+<div style="margin-left: 50px">
+
+    <p>wanna change something ya?</p>
+
+    <form method="post" th:action="@{'/admin/albums/edit'}">
+
+        <div class="row">
+            <label>Album Title: </label>
+            <input name="title" />
+        </div> <br/>
+        <div class="row">
+            <label>Album Artist: </label>
+            <input name="artist" />
+        </div> <br/>
+        <div class="row">
+            <label>Genre: </label>
+            <select name="genre">
+                <option value="ROCK">ROCK</option>
+                <option value="CLASSICAL">CLASSICAL</option>
+                <option value="POP">POP</option>
+                <option value="JAZZ">JAZZ</option>
+                <option value="DUBSTEP">DUBSTEP</option>
+                <option value="TECHNO">TECHO</option>
+                <option value="METAL">METAL</option>
+                <option value="COUNTRY">COUNTRY</option>
+                <option value="INDIE">INDIE</option>
+                <option value="MEMES">MEMES</option>
+            </select>
+        </div> <br/>
+        <div class="row">
+            <label>Number of Tracks: </label>
+            <input name="numOfTracks" />
+        </div> <br/>
+        <div class="row">
+            <label>Album Price: </label>
+            <input name="price" />
+        </div> <br/>
+
+        <input type="hidden" name="albumID" th:value="${albumID}" />
+
+        <button class="btn btn-default" type="submit">save it</button>
+
+
+    </form>
+</div>
+<footer th:include="layout :: footer"></footer>
+
+</body>
+</html>

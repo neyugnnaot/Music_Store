@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8"/>
+    <title>our overlod pepe</title>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" th:href="@{'/css/normalize.css'}"/>
+    <link rel="stylesheet" th:href="@{'/css/skeleton.css'}"/>
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" th:href="@{'/images/favicon.png'}"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{'/css/main.css'}"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header th:include="layout :: header"></header>
+
+<h2>About The Dark Side of the Rainbow</h2>
+
+<div style="margin-left: 50px">
+
+    <h3>our overload pepe </h3>
+    <img src="/images/pepe.jpg" height="300" width="600"/>
+    <p>
+        pepe founded Dark Side of the Rainbow when he was 15 <br/>
+        seeing the world of music lacked memes he took a stand <br/>
+        he wanted to make a music store that was the best <br/>
+        and so he gather the best of the best to make his website <br/>
+        pepe now uses the revenue of this website to watch cat videos <br/>
+    </p>
+
+    <h3>vice prez doge</h3>
+    <img src="/images/doge.jpg" height="300" width="300" />
+    <p>
+        like pepe doge saw that music needed more memes <br/>
+        so doge took the time to write all of the html <br/>
+        he hopes that the world of memes can be spread for all <br/>
+        he uses his cut of the income to fund his death lazer <br/>
+    </p>
+
+    <h3>executive treasurer Solaire</h3>
+    <img src="/images/sun.png" height="300" width="270" />
+    <p>
+        seeing that they needed a religious leader to promote them <br/>
+        Solaire gladly took position as treasurer and executive <br/>
+        now the sun can receive more praise than ever before <br/>
+    </p>
+</div>
+
+<footer th:include="layout :: footer"></footer>
+
+</body>
+</html>
